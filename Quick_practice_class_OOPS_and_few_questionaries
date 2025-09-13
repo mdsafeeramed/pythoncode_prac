@@ -1,0 +1,298 @@
+# 1) Write a function to reverse the list
+mylist= [1, 2, 3, 4, 5]
+# 2) Write a function to reverse the tuple in list.
+mylist = [(1,2), (1, 3), (1, 4)]
+# 3) Write a function to reverse the tuples in tuple but result should be in list in tuples.
+myvalues = ((1, 2), (1, 3), (1, 4))
+# 4) reverse list using inbuilt reverse command
+myval = [1, 2, 3, 4, 5]
+# 5) concatenate or add the two list together using extend inbuild command.
+myval1= ["apple", "banana", "grapes"]
+myval2 = [1, 2, 3, 4, 5]
+# 6) get the index number from the list using inbuilt comand index
+myval1= ["apple", "banana", "grapes"]
+# 7) Clear the list means empty the list using clear inbuilt method
+myval2 = [1, 2, 3, 4, 5]
+# 8) remove the specific element from the list using inbuilt command pop (position number or index number)
+myval1= ["apple", "banana", "grapes"]
+# 9) removes the first item with the specified value fron list using inbuilt command remove (specfied value/name)
+myval1= ["apple", "banana", "grapes"]
+# 10) Return the number of times the value appears in the list using inbuilt command count
+myval1= ["apple", "banana", "grapes", "apple"]
+
+
+# Class
+# what is class
+# In Python, a class serves as a blueprint or a template for creating objects.
+
+# what is __init__ in class
+# This is a special method known as the constructor.
+# It is automatically called when a new instance of the class is created and is used to initialize the instance's attributes.
+
+# what is self in class
+# This parameter is a convention in Python methods and refers to the current instance of the class.
+# It must be the first parameter of any method within a class.
+
+# What is attribute in class
+# These are variables associated with a class or its instances. They can be:
+# Class Variables: Shared by all instances of the class.(val1 = "test")
+#In Python, a class variable is a variable that is owned by the class itself,
+# rather than by any specific instance of the class. This means that all instances (objects) of a class share
+# the same copy of a class variable.
+# Instance Variables: Unique to each individual instance of the class.(self.name)
+# In Python, an instance variable is an attribute that belongs to a specific instance (or object) of a class.
+# Unlike class variables, which are shared among all instances of a class, instance variables
+# hold data that is unique to each individual object
+
+# 11) write a class to convert tuples in list
+mytuples = [(1, 'a', 11), (2, 'b', 12), (3, 'c', 13), (4, 'd', 14)]
+
+# NOTES IMPORTANT READ FIRST AND THEN CODE
+
+# What is Inheritance
+# Inheritance in Python is a fundamental concept of Object-Oriented Programming (OOP)
+# that allows a new class (called the child class or subclass) to inherit attributes and methods from
+# an existing class (called the parent class or superclass).
+
+# What is override in inheritance
+# Override methods:
+# Provide a new implementation for a method that is already defined in the parent class, effectively changing
+# its behavior for instances of the child class.
+
+# Code Reusability:
+# Inheritance promotes code reusability by allowing child classes to utilize the functionalities already
+# defined in the parent class, avoiding redundant code.
+
+# What is super()
+# The super() function is commonly used within the child class's __init__ method to call the parent class's constructor
+# and initialize inherited attributes.
+
+# How many inheritance are there in Python?
+# The five types of inheritance in Python are single, multiple, multilevel, hierarchical, and hybrid inheritance
+
+# OVERLOADING IN PYTHON
+# In many programming languages like C++ or Java, you can define multiple methods with the same name but different parameter lists.
+# This concept is called method overloading.
+# Python does not support method overloading by default. If you define multiple methods with the same name,
+# only the latest definition will be used.
+# however, it offers several techniques to simulate method overloading.
+# Using Variable Arguments (*args)
+# Using Default Arguments (None as default value)
+# Using Multiple Dispatch
+#  a) Python's multipledispatch library allows true method overloading by dispatching functions based on parameter types and counts.
+#  b) Install multipledispatch module using the following command: pip install multipledispatch
+
+# 12) Write a class first for two unequal list and inherit class for three unequal list (normal way)
+mylist1 = ['a', 'b', 'c', 'd', 'e', 'f']
+mylist2 = [0, 1, 2, 3]
+mylist3 = [10, 11, 12, 13]
+
+# Multiple inheritance
+# super() function does not able to call particular class in multiple inheritance
+# instead we use the class name __init__ constructor for multiple inheritance
+# for example
+# person.__init__(self, name, age)
+# teacher.__init__(self, teacher_name)
+
+# MRO: Method Resolution Order (MRO) is the order in which Python looks for a method in a hierarchy of classes.
+# Especially it plays vital role in the context of multiple inheritance as single method may be found in multiple super classes.
+# So if we have same method name in both the parent clasess, it perform MRO and take the method from the first class we have specified in inheritance class
+# for example
+# class Student(teacher, person): it will pick from teacher parent class
+# class Student(person, teacher): it will pick from person parent class
+
+# 13 write a class for multiple inheritances
+
+# What is ENCAPSULATION
+
+# Encapsulation means hiding internal details of a class and only exposing what’s necessary.
+# It helps to protect important data from being changed directly and keeps the code secure and organized.
+# Technically, encapsulation is an object-oriented programming principle where data (variables)
+# and methods (functions) are bundled together in a class.
+# By default in python all are public like instant variable, methods and properties of class
+# any one can change the value of instant variable, ny creating instance of class and changing the variabes.
+# for example
+# obj1 = student()
+# res = obj1.score = 89
+# Access specifiers in python: 1) public  2) private(double underscore __) 3) protect(single underscore _)
+# We can also use setter and getter functions for variables
+# private can used only in only in class
+# protector varibale can be used only and only in derived/sub/child inheritance class
+# Note: protector variable are still accessible directly.
+# Use a single underscore (_) before a method name to indicate it is protected meant to be used within class or its subclasses.
+# Use a double underscore (__) to define a private method accessible only within class due to name mangling.
+# Note: Unlike other programming languages, Python does not enforce access modifiers like public, private or protected at the language level.
+# However, it follows naming conventions and uses a technique called name mangling to support encapsulation.
+
+# 14) Write a class which use private variable, so they should not change the value directly
+# 15)  Write class for private method and protect method
+
+# abstract class
+# what is ABSTRACT CLASS
+# An abstract class in Python is a class that cannot be instantiated directly and serves as a blueprint for other classes(child clasess).
+# It defines a common interface and enforces a structure that subclasses must adhere to.
+# This approach helps in reducing the complexity and increasing the efficiency of application development.
+# Python provides the abc module to define ABC(Abstract base class) and enforce the implementation of abstract methods in subclasses.
+# from abc import ABC, abstractmethod
+# class goal(abc):
+#
+#   @abstarctmethod
+#   def aim(self):
+#   pass
+#
+#   Full implementation
+#   def workhard(self):
+#       return f"Learning to achieve the goal"
+#
+# Note: code/definition/statements in abstract class can be implemented or not Implemented, it is left to user, it is a blueprint.
+# We cannot instantiate the class, subclass/derivied/child class will use this abstract class and implement the code.
+# Where as in INTERFACE all methods are abstractmethods, it is a blueprint.
+# subclass/derivied/child class will use this abstract class and methods to implement the code.
+#
+# 16) Write a program for abstract class and explain
+
+# INTERFACE
+# Interfaces (using Abstract Base Classes)
+# In Python, an "interface" is typically implemented as an abstract base class where all methods are abstract.
+# This means the class defines a contract that any implementing subclass must adhere to, without providing any default implementations.
+# Python provides the abc module to define ABC(Abstract base class) and enforce the implementation of abstract methods in subclasses.
+# from abc import ABC, abstractmethod
+# class goal(abc):
+#
+#   @abstarctmethod
+#   def aim(self):
+#       pass
+#
+#   @abstarctmethod
+#   def workhard(self):
+#       pass
+#
+#   @abstarctmethod
+#   def skils(self)
+#       pass
+# Note: code/definition/statements in Interface class not Implemented, it is a blueprint.
+# We cannot instantiate the class, subclass/derivied/child class will use this abstract/interface class and implement the code.
+# Where as in INTERFACE all methods are abstractmethods, it is a blueprint.
+# subclass/derivied/child class will use this abstract/interface class and methods to implement the code.
+
+# 17) Write a program for Interface class
+
+# What is Polymorphism in Python?
+# The term polymorphism refers to a function or method taking different forms in different contexts.
+# Since Python is a dynamically typed language, polymorphism in Python is very easily implemented.
+# If a method in a parent class is overridden with different business logic in its different child classes,
+# the base class method is a polymorphic method.
+
+# Ways of implementing Polymorphism in Python
+# There are four ways to implement polymorphism in Python −
+
+# Duck Typing
+# Operator Overloading
+# Method Overriding
+# Method Overloading
+
+# Duck Typing
+# Duck typing is a concept where the type or class of an object is less important than the methods it defines.
+# Using this concept, you can call any method on an object without checking its type, as long as the method exists.
+# This term is defined by a very famous quote that states: Suppose there is a bird that walks like a duck,
+# swims like a duck, looks like a duck, and quaks like a duck then it probably is a duck.
+# We can pass any class or method from function/method.
+
+# 18 write a program for duck typing
+
+# Method Overriding in Python
+# In method overriding, a method defined inside a subclass has the same name as a method in its superclass
+# but implements a different functionality.
+
+# 19 Write a program for Method Overriding
+
+# Operators overloading
+# Operator Overloading means giving extended meaning beyond their predefined operational meaning.
+# For example operator + is used to add two integers as well as join two strings and merge two lists.
+# It is achievable because '+' operator is overloaded by int class and str class.
+# You might have noticed that the same built-in operator or function shows different behavior for objects of different classes,
+# this is called Operator Overloading.
+# + Operator perform addition of integer, same operator perform concatenation of string,
+# * Operator perform multiplication of integer, same operator perform repeatation of word ("greek"*4)
+# Note: __str__ Operator will return the values
+
+# 20 Write a program for Operator Overloading
+
+# METHOD OVERLOADING
+# When a class contains two or more methods with the same name but different number of parameters or datatypes
+# then this scenario can be termed as method overloading.
+# Python does not allow overloading of methods by default, however,
+# we can use the techniques like argument lists, multiple dispatch and default parameters to achieve this.
+# For multiple dispatch we need to install pip install multipledispatch
+# for example len() function/method will get len info for list, tuples, dictionary and strings, this is method overloading
+
+# 21 Write a program for method overloading
+
+# WRAPPER IN PYTHON
+
+# Function wrappers, also known as decorators, are a powerful and useful feature in Python
+# that allows programmers to modify the behavior of a function or class without changing its actual code.
+# means calling function under another function.
+# Decorators enable wrapping another function to extend or alter its behavior dynamically at runtime.
+
+# 22 write the program for WRAPPER Function or Class
+
+# 23) Write a program to look how manytime IP address are repeated/count
+mystring1 = "This the IP address 10.129.108.212, 10.129.108.213, 10.129.108.214, 10.129.108.
+# 24) write a program to grep word from the given string
+s = "My favorite fruits are apple, banana, and mango."
+# 25) write a program to grep $ follwed with amount
+s = "Price: $30, Discount: $5"
+# 26) Program to print half triangles using *
+# note: end=" " will continue in same line(does not go to new line)
+# print(" ") this statement is for give space and go to new line for next for loop.
+
+# for example
+#  *
+#  * *
+#  * * *
+#  * * * *
+#  * * * * *
+# 27) Program to print half triangles using * in reverse order
+# for example
+#  * * * * *
+#  * * * *
+#  * * *
+#  * *
+#  *
+# 28) Write program to Floyd's Triangle of number with height 5
+# for ex: 1
+#         2 3
+#         4 5 6
+#         7 8 9 10
+#         11 12 13 14 15
+# 29) Program to print half pyramid a using numbers
+# for example
+# 1
+# 1 2
+# 1 2 3
+# 1 2 3 4
+# 1 2 3 4 5
+
+# 30) A recursive function in Python is a function that calls itself within its definition.
+# This technique is useful for solving problems that can be broken down into smaller, self-similar subproblems.
+# A recursive function typically has two parts: a base case and a recursive case.
+# The base case is a condition that stops the recursion, while the recursive case calls the function itself with a modified input.
+# 31) Connect to OracleDB server(Practice at PC)
+# 32) Take parameters from CLI to run script from CLi prompt.
+    # syntax  python .\<filename.py> <parameter1> <parameter2> <parameter3>
+    # Note: in import sys .\<filename.py> consider as parameter zero [0]
+    # <parameter1> consider as parameter zero [1]
+    # <parameter2> consider as parameter zero [1]
+    # whatever we pass from cli or in python itself in always string.
+
+# 33) if __name__ == "main()"
+# The if __name__ == "__main__" idiom is a Python construct that helps control code execution in scripts.(standalone script)
+# It’s a conditional statement that allows you to define code that runs only when the file is executed as a script,
+# not when it’s imported as a module.
+
+# When you run a Python script, the interpreter assigns the value "__main__" to the __name__ variable.
+# If Python imports the code as a module, then it sets __name__ to the module’s name instead.
+# By encapsulating code within if __name__ == "__main__", you can ensure that it only runs in the intended context(only in script).
+
+# 34 write a program to import as module (question 76)
